@@ -1,6 +1,9 @@
 package org.launchcode.techjobs.oo;
 
 import org.junit.Test;
+
+import javax.swing.text.Position;
+
 import static org.junit.Assert.*;
 
 public class JobTest {
@@ -20,6 +23,10 @@ public class JobTest {
         Job testJob = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
         assertTrue(testJob instanceof Job);
+        assertTrue(testJob.getEmployer() instanceof Employer);
+        assertTrue(testJob.getLocation() instanceof Location);
+        assertTrue(testJob.getPositionType() instanceof PositionType);
+        assertTrue(testJob.getCoreCompetency() instanceof CoreCompetency);
         assertEquals("Product tester", testJob.getName());
         assertEquals("ACME", testJob.getEmployer().getValue());
         assertEquals("Desert", testJob.getLocation().getValue());
